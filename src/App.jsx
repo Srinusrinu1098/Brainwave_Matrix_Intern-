@@ -4,7 +4,7 @@ import Products from "./AllComponents/Products/Products";
 import PoductsDetails from "./AllComponents/ProductDetails/PoductsDetails";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import NotFound from "./AllComponents/Notfound/Notfound";
+import NotFound from "./AllComponents/Notfound/NotFound";
 import Shop from "./AllComponents/Shop/Shop";
 import ProductDetails2 from "./AllComponents/ProductDetails2/ProductDetails2";
 import Mainpage from "./AllComponents/Mainpage/Mainpage";
