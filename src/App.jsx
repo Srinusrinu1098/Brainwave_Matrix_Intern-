@@ -1,7 +1,7 @@
 import Home from "./AllComponents/Home/Home";
 import Login from "./AllComponents/Login/Login";
 import Products from "./AllComponents/Products/Products";
-import PoductsDetails from "./AllComponents/ProductDetails/poductsDetails";
+import PoductsDetails from "./AllComponents/ProductDetails/PoductsDetails";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./AllComponents/Notfound/Notfound";
