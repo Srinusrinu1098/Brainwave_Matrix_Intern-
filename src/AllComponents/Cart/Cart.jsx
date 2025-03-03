@@ -48,7 +48,7 @@ function Cart() {
           {cartList.map((item) => (
             <li key={item.id}>
               <div className="shadow-md flex py-4 justify-between items-center pl-5  w-full  ">
-                <div className="flex flex-col items-center sm:flex-row">
+                <div className="flex flex-col justify-center items-center sm:flex-row">
                   <img
                     className="w-[60px]"
                     src={
