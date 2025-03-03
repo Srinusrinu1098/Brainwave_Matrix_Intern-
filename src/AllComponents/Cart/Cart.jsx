@@ -62,7 +62,7 @@ function Cart() {
                     <p>{item.brand ? item.brand.slice(0, 10) : "UnKnown"}</p>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center px-4 sm:flex-row">
+                <div className="flex flex-col items-center justify-center pl-10 sm:flex-row">
                   <div className="flex justify-center items-center gap-5 order-4">
                     <p
                       onClick={() => decrementCartItemQuantity(item.id)}
