@@ -43,10 +43,10 @@ function Cart() {
           <img src="https://dlinkmea.com/images/no-product.png" className="" />
         </div>
       ) : (
-        <ul className="flex flex-col justify-center sm:mx-7 ">
+        <ul className="flex flex-col justify-center sm:px-8 w-full">
           {cartList.map((item) => (
             <li key={item.id}>
-              <div className="shadow-md flex py-4 justify-between px-7 w-[500px] sm:w-full">
+              <div className="shadow-md flex py-4 justify-between  w-full  ">
                 <div className="flex items-center">
                   <img
                     className="w-[60px]"
@@ -81,13 +81,13 @@ function Cart() {
                     {item.price} $
                   </h1>
                 </div>
-                <div className="flex items-center w-[100px] justify-between">
+                <div className="flex items-center w-[100px] sm:w-[150px] justify-between sm:pr-5">
                   <h1 className="text-blue-500 font-bold hidden sm:flex">
                     {item.price} $
                   </h1>
                   <p
                     onClick={() => removeCartItem(item.id)}
-                    className="cursor-pointer"
+                    className="cursor-pointer px-10 sm:px-0"
                   >
                     <MdOutlineDeleteOutline />
                   </p>
@@ -98,7 +98,7 @@ function Cart() {
         </ul>
       )}
       {cartList?.length > 0 && (
-        <div className="flex flex-col justify-end items-end mx-4 sm:mx-20 py-5 ">
+        <div className="flex flex-col justify-end items-end mx-4 sm:mx-8 py-5 ">
           <h1 className="text-blue-500 cursor-pointer font-bold">
             Total : {TotalSum} /-
           </h1>
