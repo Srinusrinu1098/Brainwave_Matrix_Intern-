@@ -7,6 +7,18 @@ import { IoIosHome } from "react-icons/io";
 import { BsHandbagFill } from "react-icons/bs";
 import { TbLogout, TbLogin } from "react-icons/tb";
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
 function Headers() {
   const nagivate = useNavigate();
   const location = useLocation();
@@ -14,6 +26,7 @@ function Headers() {
   const { cartList } = useContext(ContextItems);
 
   const [cartItems, SetCartItems] = useState([]);
+  const [logoutDialogOpen, setLogoutDialogOpen] = useState(false);
   const user = localStorage.getItem("User");
 
   useEffect(() => {
@@ -122,14 +135,66 @@ function Headers() {
         </div>
         <div>
           {user && (
-            <Button onClick={logout} className="hidden sm:flex">
-              Logout
-            </Button>
+            <div className="hidden sm:flex">
+              <AlertDialog
+                open={logoutDialogOpen}
+                onOpenChange={setLogoutDialogOpen}
+              >
+                <AlertDialogTrigger>
+                  <div className="bg-black flex flex-col justify-center items-center h-[40px] w-[80px] cursor-pointer rounded-md text-white">
+                    Logout
+                  </div>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>
+                      Are you sure you want to log out?
+                    </AlertDialogTitle>
+                    <AlertDialogDescription>
+                      You will be signed out from your account. To access your
+                      data again, you will need to log in.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction onClick={logout}>
+                      Continue
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+            </div>
           )}
           {user && (
-            <Button onClick={logout} className="flex sm:hidden">
-              <TbLogout />
-            </Button>
+            <div className="flex sm:hidden">
+              <AlertDialog
+                open={logoutDialogOpen}
+                onOpenChange={setLogoutDialogOpen}
+              >
+                <AlertDialogTrigger>
+                  <div className="bg-black flex flex-col cursor-pointer justify-center items-center h-[40px] w-[40px] rounded-md text-white">
+                    <TbLogout />
+                  </div>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>
+                      Are you sure you want to log out?
+                    </AlertDialogTitle>
+                    <AlertDialogDescription>
+                      You will be signed out from your account. To access your
+                      data again, you will need to log in.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction onClick={logout}>
+                      Continue
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+            </div>
           )}
           {!user && (
             <Button onClick={logout} className="hidden sm:flex">

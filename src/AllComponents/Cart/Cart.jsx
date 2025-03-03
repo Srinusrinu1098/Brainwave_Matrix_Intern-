@@ -8,6 +8,7 @@ import Modal from "react-modal";
 
 function Cart() {
   const nagivate = useNavigate();
+
   const {
     cartList,
     removeCartItem,
@@ -43,7 +44,7 @@ function Cart() {
           <img src="https://dlinkmea.com/images/no-product.png" className="" />
         </div>
       ) : (
-        <ul className="flex flex-col justify-center sm:px-8 w-full">
+        <ul className="flex flex-col justify-center px-6 w-full">
           {cartList.map((item) => (
             <li key={item.id}>
               <div className="shadow-md flex py-4 justify-between  w-full  ">

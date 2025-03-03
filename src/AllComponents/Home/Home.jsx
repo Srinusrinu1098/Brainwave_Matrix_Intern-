@@ -40,7 +40,7 @@ const Home = () => {
         </p>
         <Button
           onClick={() => navigate("/shop")}
-          className="mt-4 bg-white text-blue-600 px-6 py-2 font-semibold rounded shadow hover:text-white"
+          className="mt-4 bg-white text-blue-600 px-6 py-2 font-semibold rounded shadow cursor-pointer hover:text-white"
         >
           Shop Now
         </Button>
