@@ -39,10 +39,9 @@ function Cart() {
         </button>
       </div>
       {cartList.length === 0 ? (
-        <img
-          src="https://dlinkmea.com/images/no-product.png"
-          className="flex justify-center px-[300px]"
-        />
+        <div className="flex flex-col justify-center items-center my-[200px] sm:my-0 sm:px-40 sm:h-[80vh]">
+          <img src="https://dlinkmea.com/images/no-product.png" className="" />
+        </div>
       ) : (
         <ul className="flex flex-col justify-center sm:mx-7 ">
           {cartList.map((item) => (
@@ -107,7 +106,6 @@ function Cart() {
             className="bg-blue-500 animate-bounce my-7 "
             onClick={() => {
               setModalOpen(true);
-              removeAllItemsInCart();
             }}
           >
             CheckOut
@@ -132,6 +130,7 @@ function Cart() {
               onClick={() => {
                 alert("Payment Succesfull ❤️ Thankyou for Shopping");
                 setModalOpen(false);
+                removeAllItemsInCart();
               }}
             >
               Confirm Payment
