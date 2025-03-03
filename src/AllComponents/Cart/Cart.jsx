@@ -61,7 +61,7 @@ function Cart() {
                     <p>{item.brand ? item.brand.slice(0, 10) : "UnKnown"}</p>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center  sm:flex-row">
+                <div className="flex flex-col items-center justify-center px-4 sm:flex-row">
                   <div className="flex justify-center items-center gap-5 order-4">
                     <p
                       onClick={() => decrementCartItemQuantity(item.id)}
@@ -87,7 +87,7 @@ function Cart() {
                   </h1>
                   <p
                     onClick={() => removeCartItem(item.id)}
-                    className="cursor-pointer px-10 sm:px-0"
+                    className="cursor-pointer px-13 sm:px-0"
                   >
                     <MdOutlineDeleteOutline />
                   </p>
