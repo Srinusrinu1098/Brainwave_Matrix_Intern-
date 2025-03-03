@@ -58,8 +58,12 @@ function Cart() {
                     }
                   />
                   <div className="w-full">
-                    <h2 className="font-bold">{item.title?.slice(0, 10)}...</h2>
-                    <p>{item.brand ? item.brand.slice(0, 10) : "UnKnown"}</p>
+                    <h2 className="font-bold text-center">
+                      {item.title?.slice(0, 10)}
+                    </h2>
+                    <p className="font-semibold text-center text-gray-500">
+                      {item.brand ? item.brand.slice(0, 10) : "UnKnown"}
+                    </p>
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-center pl-10 sm:flex-row">
