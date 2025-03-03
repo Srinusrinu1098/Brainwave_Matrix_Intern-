@@ -47,8 +47,8 @@ function Cart() {
         <ul className="flex flex-col justify-center px-6 w-full">
           {cartList.map((item) => (
             <li key={item.id}>
-              <div className="shadow-md flex py-4 justify-between  w-full  ">
-                <div className="flex items-center">
+              <div className="shadow-md flex py-4 justify-between items-center pl-5  w-full  ">
+                <div className="flex flex-col items-center sm:flex-row">
                   <img
                     className="w-[60px]"
                     src={
@@ -57,7 +57,7 @@ function Cart() {
                         : item.images?.[1]
                     }
                   />
-                  <div className="max-w-[130px]">
+                  <div className="w-full">
                     <h2 className="font-bold">{item.title?.slice(0, 10)}...</h2>
                     <p>{item.brand ? item.brand.slice(0, 10) : "UnKnown"}</p>
                   </div>
