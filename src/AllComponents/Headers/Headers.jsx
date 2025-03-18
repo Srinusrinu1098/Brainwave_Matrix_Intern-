@@ -45,7 +45,7 @@ function Headers() {
   const storage = localStorage.getItem("User");
 
   return (
-    <nav className=" shadow-md p-2 flex justify-between items-center bg-white">
+    <nav className=" shadow-md p-2 flex justify-between  items-center bg-white">
       <h1
         className="text-xl font-bold text-gray-800 cursor-pointer"
         onClick={() => nagivate("/")}
@@ -54,7 +54,7 @@ function Headers() {
       </h1>
       <div className="flex w-[400px] justify-center items-center gap-4 ">
         <button
-          className={`flex items-center text-black hover:border sm:hidden hover:border-black hover:rounded-md px-4 py-2 cursor-pointer ${
+          className={`flex items-center  text-black hover:border sm:hidden hover:border-black hover:rounded-md px-2 py-2 cursor-pointer ${
             active === "Home" && "bg-blue-500 rounded-md text-white"
           }`}
           onClick={() => {
@@ -76,7 +76,7 @@ function Headers() {
           Home
         </button>
         <h2
-          className={`flex items-center text-black sm:hidden hover:border hover:border-black hover:rounded-md px-4 py-2 cursor-pointer ${
+          className={`flex items-center text-black sm:hidden hover:border hover:border-black hover:rounded-md px-2 py-2 cursor-pointer ${
             active === "Products" && "bg-blue-500 rounded-md text-white"
           }`}
           onClick={() => {
@@ -98,7 +98,7 @@ function Headers() {
           Products
         </h2>
         <h2
-          className={`flex items-center text-black sm:hidden hover:border hover:border-black hover:rounded-md px-4 py-2 cursor-pointer ${
+          className={`flex items-center text-black sm:hidden hover:border hover:border-black hover:rounded-md px-2 h-[30px] cursor-pointer ${
             active === "Cart" && "bg-blue-500 rounded-md text-white"
           }`}
           onClick={() => {
@@ -108,11 +108,11 @@ function Headers() {
         >
           <div className="flex flex-col justify-center items-center">
             {cartItems?.length > 0 && storage != null && (
-              <h2 className=" m-0 text-[10px] pl-2 text-red-600 font-bold animate-bounce">
+              <h2 className=" m-[0px] p-[0px] text-[0.2rem] pl-2   text-red-600 font-bold ">
                 {cartItems?.length}
               </h2>
             )}
-            <FaShoppingCart className=" m-0 text-[12px]" />
+            <FaShoppingCart className="p-[0px] " />
           </div>
         </h2>
         <h2
@@ -135,7 +135,7 @@ function Headers() {
           </div>
         </h2>
         <h2
-          className={`flex items-center text-black sm:hidden hover:border hover:border-black hover:rounded-md px-4 py-2 cursor-pointer ${
+          className={`flex items-center text-black sm:hidden hover:border hover:border-black hover:rounded-md px-2 py-2 cursor-pointer ${
             active === "Orders" && "bg-blue-500 rounded-md text-white"
           }`}
           onClick={() => {
