@@ -19,7 +19,7 @@ function PoductsDetails() {
       try {
         const response = await fetch(`https://dummyjson.com/products/${id}`);
         const data = await response.json();
-        console.log(data);
+
         setItemDetails(data); // Update state instead of modifying a const
       } catch (error) {
         console.error("Error fetching products:", error);

@@ -16,7 +16,7 @@ const Shop = () => {
       try {
         const response = await fetch("https://dummyjson.com/products");
         const data = await response.json();
-        console.log(data);
+
         setProducts(data.products); // Update state instead of modifying a const
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -27,7 +27,7 @@ const Shop = () => {
       try {
         const response = await fetch("https://fakestoreapi.com/products");
         const data = await response.json();
-        console.log(data);
+
         setProducts2(data); // Update state instead of modifying a const
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -46,15 +46,15 @@ const Shop = () => {
     <div className="font-sans bg-gray-100 min-h-screen">
       <Headers />
       {/* Featured Products */}
-      <div
-        className="flex justify-end cursor-pointer"
+
+      <Button
         onClick={() => nagivate("/products")}
+        className="text-center font-serif text-white ml-5 px-10 py-8 my-10 rounded-xl animate-bounce bg-blue-500 "
       >
-        <Button className="text-center font-serif text-white  px-10 py-8 my-10 rounded-4xl animate-bounce bg-blue-500 ">
-          Click to <br />
-          Category Section
-        </Button>
-      </div>
+        Click to <br />
+        Category Section
+      </Button>
+
       <section className="py-2 px-6">
         <h3 className="text-2xl font-semibold text-gray-800 text-center">
           Brand New Products

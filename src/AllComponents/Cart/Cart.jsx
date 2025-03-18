@@ -5,9 +5,59 @@ import { MdOutlineDeleteOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Modal from "react-modal";
+import { toast } from "sonner";
 
 function Cart() {
   const nagivate = useNavigate();
+
+  const handlePayment = async () => {
+    const amountInCents = Math.round(TotalSum * 100);
+    const options = {
+      key: "rzp_test_ahVLIhUPILFfE5", // Replace with your test key
+      amount: amountInCents, // Razorpay accepts amount in paise (1 INR = 100 paise)
+      currency: "USD",
+      name: "Srinu's E-COM",
+      description: "Demo Transaction",
+      image:
+        "https://marketplace.canva.com/EAFvDRwEHHg/1/0/1600w/canva-colorful-abstract-online-shop-free-logo-cpI8ixEpis8.jpg", // Optional
+      handler: function (response) {
+        const newOrder = {
+          id: Math.floor(Math.random() * 1000000),
+          date: new Date().toISOString(),
+          status: "Product shipped",
+          items: [...cartList],
+        };
+
+        const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
+        localStorage.setItem(
+          "orders",
+          JSON.stringify([newOrder, ...existingOrders])
+        );
+        toast("🎉 Payment Successful!");
+
+        removeAllItemsInCart();
+        nagivate("/orders");
+      },
+      prefill: {
+        name: "Srinu The Developer",
+        email: "SrinuTheCrazy@crazy.com",
+        contact: "9999999999",
+      },
+      theme: {
+        color: "#1A1F71",
+      },
+    };
+
+    const razorpayScript = document.createElement("script");
+    razorpayScript.src = "https://checkout.razorpay.com/v1/checkout.js";
+    razorpayScript.async = true;
+    razorpayScript.onload = () => {
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    };
+
+    document.body.appendChild(razorpayScript);
+  };
 
   const {
     cartList,
@@ -105,7 +155,7 @@ function Cart() {
       {cartList?.length > 0 && (
         <div className="flex flex-col justify-end items-end mx-4 sm:mx-8 py-5 ">
           <h1 className="text-blue-500 cursor-pointer font-bold">
-            Total : {TotalSum} /-
+            Total : {TotalSum} $ /-
           </h1>
           <Button
             className="bg-blue-500 animate-bounce my-7 "
@@ -133,9 +183,8 @@ function Cart() {
             <Button
               className="bg-green-500"
               onClick={() => {
-                alert("Payment Succesfull ❤️ Thankyou for Shopping");
                 setModalOpen(false);
-                removeAllItemsInCart();
+                handlePayment();
               }}
             >
               Confirm Payment

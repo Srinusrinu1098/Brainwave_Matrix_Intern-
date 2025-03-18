@@ -15,7 +15,7 @@ function ProductDetails2() {
       try {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);
         const data = await response.json();
-        console.log(data);
+
         setItemDetails(data); // Update state instead of modifying a const
       } catch (error) {
         console.error("Error fetching products:", error);

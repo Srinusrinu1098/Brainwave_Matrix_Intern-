@@ -14,9 +14,9 @@ function Mainpage() {
     }
   };
   return (
-    <>
+    <div className="font-sans bg-gray-100 min-h-screen">
       <Headers />
-      <div className="flex flex-col justify-center md:flex-row  gap-5 items-center h-[100vh]  bg-white px-7">
+      <div className="flex flex-col justify-center md:flex-row  gap-5 items-center h-[100vh]  px-7">
         <img
           className="w-[600px] md:order-4 md:w-[400px] py-5 sm:w-[500px] rounded-br-[40px] rounded-tl-[40px]"
           src="https://images.unsplash.com/photo-1483985988355-763728e1935b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D"
@@ -41,7 +41,7 @@ function Mainpage() {
           </Button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

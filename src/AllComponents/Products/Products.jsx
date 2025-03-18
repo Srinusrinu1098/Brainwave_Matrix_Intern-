@@ -99,7 +99,7 @@ function Products() {
           "https://fakestoreapi.com/products/category/jewelery"
         );
         const data = await response.json();
-        console.log(data);
+
         setJewl(data); // Update state instead of modifying a const
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -114,8 +114,6 @@ function Products() {
     groceries();
     decoration();
   }, []);
-  console.log(decor);
-  console.log(electro);
 
   if (!localStorage.getItem("User")) {
     navigate("/login", { replace: true });

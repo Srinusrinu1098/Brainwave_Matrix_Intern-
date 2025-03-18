@@ -15,7 +15,7 @@ const Home = () => {
       try {
         const response = await fetch("https://dummyjson.com/products");
         const data = await response.json();
-        console.log(data);
+
         setProducts(data.products); // Update state instead of modifying a const
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -77,7 +77,8 @@ const Home = () => {
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white text-center p-4 mt-10">
-        &copy; 2025 BlueShop. All rights reserved.
+        &copy; 2025 BlueShop. All rights reserved.{" "}
+        <span className="text-gray-500">Made by Srinu</span>
       </footer>
     </div>
   );

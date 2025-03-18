@@ -11,13 +11,14 @@ import Mainpage from "./AllComponents/Mainpage/Mainpage";
 import ContextItems from "./Context/ContextItems";
 import { useEffect, useState } from "react";
 import Cart from "./AllComponents/Cart/Cart";
+import Orders from "./AllComponents/Orders/Orders";
 
 function App() {
   const [cartList, setCartList] = useState(() => {
     const storedCart = localStorage.getItem("cartList");
     return storedCart ? JSON.parse(storedCart) : [];
   });
-  console.log(cartList);
+
   const removeAllCartItems = () => {
     setCartList([]);
   };
@@ -123,6 +124,7 @@ function App() {
         <Route path="/productdetails2/:id" element={<ProductDetails2 />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/orders" element={<Orders />} />
         <Route path="/Not-Found" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
