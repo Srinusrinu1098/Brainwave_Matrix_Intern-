@@ -12,6 +12,7 @@ import ContextItems from "./Context/ContextItems";
 import { useEffect, useState } from "react";
 import Cart from "./AllComponents/Cart/Cart";
 import Orders from "./AllComponents/Orders/Orders";
+import Crew from "./AllComponents/Crew/Crew";
 
 function App() {
   const [cartList, setCartList] = useState(() => {
@@ -124,6 +125,7 @@ function App() {
         <Route path="/productdetails2/:id" element={<ProductDetails2 />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/crew" element={<Crew />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/Not-Found" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />

@@ -39,6 +39,12 @@ function Mainpage() {
           >
             Shop Now
           </Button>
+          <Button
+            onClick={() => nagivate("/crew")}
+            className="mt-6 ml-3 px-6 py-3 bg-blue-600 text-white font-semibold rounded-md shadow-md transition"
+          >
+            Crew Mates
+          </Button>
         </div>
       </div>
     </div>
