@@ -19,22 +19,14 @@ function Orders() {
   return (
     <div>
       <Headers />
-      <div className="flex justify-between items-center">
-        <motion.h1
-          className="pl-10  font-bold text-blue-500 text-2xl"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          My Orders
-        </motion.h1>
-        <motion.h1
+      <h1 className="pl-10 pt-6 font-bold text-blue-500">My Orders</h1>
+      <div className="flex justify-end mx-4 sm:mx-7 ">
+        <button
+          className="text-blue-500 cursor-pointer"
           onClick={removeAllOrders}
-          className=" pr-10 pt-20 text-blue-500 text-xl cursor-pointer"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
         >
-          remove all orders
-        </motion.h1>
+          Remove All
+        </button>
       </div>
 
       {orders.length === 0 ? (
@@ -71,7 +63,7 @@ function Orders() {
                   className="text-sm font-bold 
                       text-green-500"
                 >
-                  delivery status :- {order.status}...
+                  Delivery status :- {order.status}...
                 </p>
               </div>
 
