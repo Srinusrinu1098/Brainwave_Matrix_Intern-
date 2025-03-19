@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Headers from "../Headers/Headers";
 
 function Orders() {
-  const { orderList } = useContext(ContextItems);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -12,16 +11,31 @@ function Orders() {
     setOrders(storedOrders);
   }, []);
 
+  const removeAllOrders = () => {
+    localStorage.removeItem("orders");
+    setOrders([]);
+  };
+
   return (
     <div>
       <Headers />
-      <motion.h1
-        className="pl-10 pt-6 font-bold text-blue-500 text-2xl"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        My Orders
-      </motion.h1>
+      <div className="flex justify-between items-center">
+        <motion.h1
+          className="pl-10 pt-6 font-bold text-blue-500 text-2xl"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          My Orders
+        </motion.h1>
+        <motion.h1
+          onClick={removeAllOrders}
+          className=" pr-10  text-blue-500 text-xl cursor-pointer"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          remove all orders
+        </motion.h1>
+      </div>
 
       {orders.length === 0 ? (
         <div className="flex flex-col justify-center items-center my-[200px]">

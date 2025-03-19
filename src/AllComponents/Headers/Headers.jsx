@@ -108,7 +108,7 @@ function Headers() {
         >
           <div className="flex flex-col justify-center items-center">
             {cartItems?.length > 0 && storage != null && (
-              <h2 className=" m-[0px] p-[0px] text-[0.2rem] pl-2   text-red-600 font-bold ">
+              <h2 className=" m-[0px] p-[0px] text-[10px] pl-2   text-red-600 font-bold ">
                 {cartItems?.length}
               </h2>
             )}
