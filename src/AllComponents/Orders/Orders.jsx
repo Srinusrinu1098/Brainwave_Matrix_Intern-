@@ -2,14 +2,22 @@ import React, { useContext, useEffect, useState } from "react";
 import ContextItems from "../../Context/ContextItems";
 import { motion } from "framer-motion";
 import Headers from "../Headers/Headers";
+import { useNavigate } from "react-router-dom";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedOrders = JSON.parse(localStorage.getItem("orders")) || [];
     setOrders(storedOrders);
   }, []);
+
+  useEffect(() => {
+    if (!localStorage.getItem("User")) {
+      navigate("/login");
+    }
+  }, [navigate]);
 
   const removeAllOrders = () => {
     localStorage.removeItem("orders");
