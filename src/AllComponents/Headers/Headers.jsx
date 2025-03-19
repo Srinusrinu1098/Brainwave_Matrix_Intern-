@@ -50,7 +50,7 @@ function Headers() {
         className="text-xl font-bold text-gray-800 cursor-pointer"
         onClick={() => nagivate("/")}
       >
-        BlueShop
+        B-COM
       </h1>
       <div className="flex w-[400px] justify-center items-center gap-4 ">
         <button
