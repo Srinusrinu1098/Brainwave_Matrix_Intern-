@@ -21,7 +21,7 @@ function Orders() {
       <Headers />
       <div className="flex justify-between items-center">
         <motion.h1
-          className="pl-10 pt-6 font-bold text-blue-500 text-2xl"
+          className="pl-10  font-bold text-blue-500 text-2xl"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
@@ -29,7 +29,7 @@ function Orders() {
         </motion.h1>
         <motion.h1
           onClick={removeAllOrders}
-          className=" pr-10  text-blue-500 text-xl cursor-pointer"
+          className=" pr-10 pt-20 text-blue-500 text-xl cursor-pointer"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
